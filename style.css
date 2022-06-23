@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Common Styles */
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   list-style-type: none;
   outline: none;
   text-decoration: none;
-  margin: 0;
-  padding: 0;
   font-family: 'Work Sans', sans-serif;
 }
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -27,9 +27,9 @@ html {
   justify-content: center;
   align-items: center;
 }
+/* End of Common Styles */
 
-/* Section-1 */
-
+/* Section 1 */
 .section-1 {
   width: 100%;
   height: 100vh;
@@ -41,6 +41,7 @@ html {
   position: relative;
 }
 
+/* Logo */
 .logo {
   position: absolute;
   top: 3rem;
@@ -51,7 +52,9 @@ html {
   font-size: 10rem;
   color: rgba(0, 0, 0, 0.8);
 }
+/* End of Logo */
 
+/* Navbar */
 .navbar {
   position: absolute;
   top: 3rem;
@@ -69,7 +72,9 @@ html {
 .navbar-link:hover {
   transform: scale(1.5);
 }
+/* End of Navbar */
 
+/* Cube */
 .cube-wrapper {
   perspective: 100rem;
 }
@@ -170,6 +175,7 @@ html {
   transform: rotateY(180deg);
 }
 
+/* Controls */
 .controls {
   position: absolute;
   bottom: -15rem;
@@ -232,7 +238,10 @@ html {
 .controls a:hover i {
   opacity: 1;
 }
+/* End of Controls */
+/* End of Cube */
 
+/* Banner */
 .section-1-banner {
   flex-direction: column;
 }
@@ -295,13 +304,15 @@ html {
     30% 0
   );
 }
+/* End of Banner */
 
+/* Slideshow */
 .slideshow {
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   z-index: -1;
 }
 
@@ -319,3 +330,115 @@ html {
 .slideshow div.change {
   opacity: 1;
 }
+/* End of Slideshow */
+/* End of Section 1 */
+
+/* Section 2 */
+.section-2 {
+  width: 100%;
+  height: 120vh;
+  padding: 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Section 2 Heading */
+.section-2-heading {
+  font-size: 10rem;
+  font-weight: 200;
+  color: var(--black-color);
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.section-2-heading::before {
+  content: '';
+  width: 130%;
+  height: 30vw;
+  background-image: linear-gradient(var(--primary-color), var(--white-color));
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewX(-50deg);
+  transform-origin: left top;
+  z-index: -1;
+  border-radius: 1rem;
+}
+/* End of Section 2 Heading */
+
+/* Section 2 Images */
+.iphones {
+  height: 60vh;
+  width: 50vw;
+  background-image: linear-gradient(var(--primary-color), var(--white-color));
+  border-radius: 0.5rem;
+}
+
+.iphones img {
+  width: inherit;
+  height: inherit;
+  object-fit: contain;
+  position: absolute;
+  transition: opacity 3s;
+}
+
+.iphone-img-2 {
+  opacity: 0;
+}
+
+.iphones:hover .iphone-img-1 {
+  opacity: 0;
+}
+
+.iphones:hover .iphone-img-2 {
+  opacity: 1;
+}
+/* End of Section 2 Images */
+
+/* Section 2 Buttons */
+.iphone-btns {
+  display: flex;
+}
+
+.iphone-btn {
+  width: 6rem;
+  height: 6rem;
+  background-image: linear-gradient(
+    to right,
+    rgb(51, 51, 51) 60%,
+    rgb(82, 82, 82)
+  );
+  margin: 0 3rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.iphone-btn::after {
+  content: '';
+  width: 50%;
+  height: 50%;
+  display: block;
+  border: 0.1rem solid #6edae6;
+  border-radius: 1rem;
+}
+
+.iphone-btn span {
+  position: absolute;
+  top: -3rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--primary-color);
+  width: max-content;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+
+.iphone-btn:hover span {
+  transform: scale(1);
+}
+/* End of Section 2 Buttons */
+/* End of Section 2 */
